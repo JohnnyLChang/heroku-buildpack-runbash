@@ -1,3 +1,8 @@
-#!/bin/sh
-# Usage: bin/detect <build-dir>
-exec "$1"/bin/detect "$@"
+#!/usr/bin/env bash
+
+if [ -f $1/run_me_on_compile.sh ]; then
+  echo "RunBash" && exit 0
+else
+  echo "no" && exit 1
+fi
+
